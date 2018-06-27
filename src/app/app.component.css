@@ -1,0 +1,41 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    background-color: grey;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+header {
+    background: tomato;
+    display: flex;
+    justify-content: flex-end;
+    padding: 30px;
+}
+
+.lists {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    border: 1px solid grey;
+    padding: 30px;
+}
+
+.list {
+    width: 250px;
+    margin: 10px;
+    background: white;
+    padding: 20px;
+}
+
+.taskItem {
+    display: flex;
+    flex-direction: row;
+    padding: 10px 0;
+}
+
+.taskItem button {
+    margin-right: 10px
+}
