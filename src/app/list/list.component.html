@@ -1,3 +1,22 @@
-<pre>
+<div class="list"
+     id="{{data.listId}}">
+    <div class="listHeader">
+        <h4>{{data.name}}
+            <button>X</button>
+        </h4>
+
+    </div>
+    <div class="addTask">
+        <input type="text">
+        <button>add task</button>
+    </div>
+    <task-item [data]="taskItem"
+               *ngFor="let taskItem of data.tasks"></task-item>
+</div>
+<!-- <pre>
   {{data | json}}
-</pre>
+</pre> -->
+
+
+
+

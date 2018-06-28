@@ -22,20 +22,3 @@ header {
     border: 1px solid grey;
     padding: 30px;
 }
-
-.list {
-    width: 250px;
-    margin: 10px;
-    background: white;
-    padding: 20px;
-}
-
-.taskItem {
-    display: flex;
-    flex-direction: row;
-    padding: 10px 0;
-}
-
-.taskItem button {
-    margin-right: 10px
-}

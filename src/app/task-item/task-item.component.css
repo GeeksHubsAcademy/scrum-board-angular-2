@@ -1,0 +1,14 @@
+.taskItem {
+    display: flex;
+    flex-direction: row;
+    padding: 10px 0;
+}
+
+.taskItem button {
+    margin-right: 10px
+}
+.completed  {
+    opacity: 0.6;
+    color: grey;
+    text-decoration: line-through;
+}

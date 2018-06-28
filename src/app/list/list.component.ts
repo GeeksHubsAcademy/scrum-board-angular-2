@@ -10,7 +10,6 @@ export class ListComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log('list inicializado')
   }
 
 }
