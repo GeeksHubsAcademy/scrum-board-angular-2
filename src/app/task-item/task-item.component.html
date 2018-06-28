@@ -1,6 +1,6 @@
 <div class="taskItem {{data.completed ? 'completed' : ''}}"
      id="{{data.taskId}}">
-    <button>X</button>
+    <button (click)="onRemoveTask()">X</button>
     <div class="taskText">
         {{data.text}}
     </div>

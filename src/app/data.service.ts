@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { List } from './list.interface';
+import {Task} from './task.interface';
 
 @Injectable( { providedIn: 'root' } )
 export class DataService {
@@ -19,7 +20,7 @@ export class DataService {
         this.lists = JSON.parse( localStorage.getItem( 'lists' ) ) || [];
     }
     saveNewList( listName: string ) {
-        let newList = {
+        let newList: List = {
             listId: this.generateId( 'list' ),
             name: listName,
             tasks: []
@@ -35,12 +36,9 @@ export class DataService {
             taskId: this.generateId( 'task' ),
             text: taskName
         }
-        this.lists = this.lists.map( item => {
-            if ( item.listId === list.listId ) {
-                item.tasks.push( newTask )
-            }
-            return item;
-        } )
+        let listIndex = this.lists.findIndex(item => item.listId === list.listId)
+        this.lists[listIndex].tasks.push(newTask);
+        
         this.save();
 
     }
@@ -49,7 +47,15 @@ export class DataService {
     }
     removeList( id: string ) {
        
-        this.lists = this.lists.filter(item => item.listId !== id);
+        let index = this.lists.findIndex( item => item.listId === id)
+        this.lists.splice(index,1);
+        this.save();
+    }
+
+    removeTask(data:Task){
+        let indexListId = this.lists.findIndex(item => item.listId === data.listId)
+        let indexTaskId = this.lists[indexListId].tasks.findIndex(item => item.taskId === data.taskId);
+        this.lists[indexListId].tasks.splice(indexTaskId, 1);
         this.save();
     }
 }

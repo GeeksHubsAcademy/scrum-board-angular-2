@@ -1,5 +1,6 @@
 import { Component, OnChanges } from '@angular/core';
 import { DataService } from './data.service';
+import { List} from './list.interface';
 
 @Component( {
     selector: 'app-root',
@@ -7,7 +8,7 @@ import { DataService } from './data.service';
     styleUrls: [ './app.component.css' ]
 } )
 export class AppComponent  {
-    private lists: Array<Object>;
+    private lists: Array<List>;
     private addListText: String;
     private dataService: DataService;
     constructor( dataServ: DataService ) {
