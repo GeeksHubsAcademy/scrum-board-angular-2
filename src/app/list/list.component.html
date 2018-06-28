@@ -2,13 +2,15 @@
      id="{{data.listId}}">
     <div class="listHeader">
         <h4>{{data.name}}
-            <button>X</button>
+            <button (click)="onRemoveList()">X</button>
         </h4>
 
     </div>
     <div class="addTask">
-        <input type="text">
-        <button>add task</button>
+        <input type="text"
+               [(ngModel)]="newTaskName"
+               (keyup.enter)="onSaveNewTask()">
+        <button (click)="onSaveNewTask()">add task</button>
     </div>
     <task-item [data]="taskItem"
                *ngFor="let taskItem of data.tasks"></task-item>
@@ -16,7 +18,3 @@
 <!-- <pre>
   {{data | json}}
 </pre> -->
-
-
-
-

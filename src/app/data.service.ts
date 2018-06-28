@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-
+import { List } from './list.interface';
 
 @Injectable( { providedIn: 'root' } )
 export class DataService {
-    private lists: Array <Object > ;
+    private lists: Array < List > ;
 
     constructor() {
         this.load();
@@ -18,7 +18,7 @@ export class DataService {
     load() {
         this.lists = JSON.parse( localStorage.getItem( 'lists' ) ) || [];
     }
-    saveNewList( listName: String ) {
+    saveNewList( listName: string ) {
         let newList = {
             listId: this.generateId( 'list' ),
             name: listName,
@@ -27,7 +27,29 @@ export class DataService {
         this.lists.push( newList );
         this.save();
     }
+    saveNewTask( taskName: string, list: List ) {
+        let newTask = {
+            color: 'white',
+            completed: false,
+            listId: list.listId,
+            taskId: this.generateId( 'task' ),
+            text: taskName
+        }
+        this.lists = this.lists.map( item => {
+            if ( item.listId === list.listId ) {
+                item.tasks.push( newTask )
+            }
+            return item;
+        } )
+        this.save();
+
+    }
     generateId( namespace ) {
         return `${namespace}-${Date.now()}-${Math.round(Math.random()*100)}`
+    }
+    removeList( id: string ) {
+       
+        this.lists = this.lists.filter(item => item.listId !== id);
+        this.save();
     }
 }

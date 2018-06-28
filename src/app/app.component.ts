@@ -7,10 +7,18 @@ import { DataService } from './data.service';
     styleUrls: [ './app.component.css' ]
 } )
 export class AppComponent  {
-    private lists: Object;
+    private lists: Array<Object>;
     private addListText: String;
-    constructor( data: DataService ) {
-      this.lists = data.getLists();
+    private dataService: DataService;
+    constructor( dataServ: DataService ) {
+        this.lists = dataServ.getLists();
+        this.dataService = dataServ;
+    }
+    onSaveNewList() {
+        if (this.addListText.trim() !== '') {
+            this.dataService.saveNewList(this.addListText.trim());
+            this.addListText = '';
+        }
     }
     
 }
