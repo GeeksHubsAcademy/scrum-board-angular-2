@@ -1,7 +1,8 @@
-<div class="taskItem {{data.completed ? 'completed' : ''}}"
+<div class="taskItem "
      id="{{data.taskId}}">
     <button (click)="onRemoveTask()">X</button>
-    <div class="taskText">
+    <input type="checkbox" [(ngModel)]="data.completed" (change)="onCompleted()">
+    <div class="taskText {{data.completed ? 'completed' : ''}}">
         {{data.text}}
     </div>
 </div>

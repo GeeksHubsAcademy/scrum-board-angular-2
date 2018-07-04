@@ -20,5 +20,11 @@ export class TaskItemComponent implements OnChanges {
   onRemoveTask(){
     this.dataService.removeTask(this.data);
   }
+  onCompleted() {
+    
+    
+    this.dataService.save();
+    
+  }
 
 }
