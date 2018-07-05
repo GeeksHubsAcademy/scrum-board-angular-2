@@ -58,4 +58,15 @@ export class DataService {
         this.lists[indexListId].tasks.splice(indexTaskId, 1);
         this.save();
     }
+    moveTask(data: Task, newListId: string){
+        let indexListId = this.lists.findIndex(item => item.listId === data.listId)
+        let indexTaskId = this.lists[indexListId].tasks.findIndex(item => item.taskId === data.taskId);
+        this.lists[indexListId].tasks.splice(indexTaskId, 1);
+
+        data.listId = newListId;
+        
+        let listIndex = this.lists.findIndex(item => item.listId === newListId);
+        this.lists[listIndex].tasks.push(data);
+        this.save();
+    }
 }

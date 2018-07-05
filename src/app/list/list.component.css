@@ -8,3 +8,7 @@
     display: flex;
     justify-content: space-between;
 }
+ .drop-over-active {
+     border: dashed 1px black;
+     background-color: lightgreen;
+ }

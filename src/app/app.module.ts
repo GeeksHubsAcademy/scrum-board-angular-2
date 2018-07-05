@@ -8,6 +8,7 @@ import { ListComponent } from './list/list.component';
 import { TaskItemComponent } from './task-item/task-item.component';
 
 import { ColorPickerModule } from 'ngx-color-picker';
+import { DragAndDropModule } from 'angular-draggable-droppable';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { ColorPickerModule } from 'ngx-color-picker';
   imports: [
     BrowserModule,
     FormsModule,
-    ColorPickerModule
+    ColorPickerModule,
+    DragAndDropModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
