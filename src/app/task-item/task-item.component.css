@@ -24,4 +24,11 @@
     border-radius: 50%;
     border: solid 1px black;
     margin: 0 0.5em;
+    flex-shrink: 0;
+}
+input {
+    flex-shrink: 1;
+    border:none;
+    background: transparent;
+    font-style: italic;
 }
