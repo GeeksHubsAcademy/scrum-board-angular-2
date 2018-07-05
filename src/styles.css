@@ -3,3 +3,10 @@ body, html {
     margin:0;
     padding: 0;
 }
+.color-picker .saturation-lightness,
+.color-picker .hue-alpha,
+.color-picker .hex-text,
+.color-picker .preset-label,
+.color-picker hr {
+    display: none !important;
+}

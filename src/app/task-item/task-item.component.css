@@ -2,6 +2,11 @@
     display: flex;
     flex-direction: row;
     padding: 10px 0;
+    border-right-style:solid;
+    border-right-color:white;
+    border-right-width: 4px;
+    padding-right: 0.3em;
+    margin: 5px 0;
 }
 
 .taskItem button {
@@ -11,4 +16,12 @@
     opacity: 0.6;
     color: grey;
     text-decoration: line-through;
+}
+.colorPicker {
+    width:1em;
+    height:1em;
+    display: inline-block;
+    border-radius: 50%;
+    border: solid 1px black;
+    margin: 0 0.5em;
 }

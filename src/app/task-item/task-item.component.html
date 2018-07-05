@@ -1,7 +1,16 @@
 <div class="taskItem "
-     id="{{data.taskId}}">
+     id="{{data.taskId}}" [style.borderColor]="data.color">
     <button (click)="onRemoveTask()">X</button>
-    <input type="checkbox" [(ngModel)]="data.completed" (change)="onCompleted()">
+    <input type="checkbox"
+           [(ngModel)]="data.completed"
+           (change)="onCompleted()">
+    <span [(colorPicker)]="data.color"
+          class="colorPicker"
+          [style.background]="data.color"
+         (colorPickerChange)="dataService.save()"
+ [cpPresetColors] = "['#0033FF', '#ff6347', '#FF00CC', '#adff2f', '#fff', '#000']"
+ [cpPresetLabel] ="''"
+          ></span>
     <div class="taskText {{data.completed ? 'completed' : ''}}">
         {{data.text}}
     </div>
