@@ -12,11 +12,9 @@
                (keyup.enter)="onSaveNewTask()">
         <button (click)="onSaveNewTask()">add task</button>
     </div>
-    <pre>
-        {{data.tasks | json}}
-    </pre>
     <div class="taskItems"
- [sortablejs]="data.tasks" [sortablejsOptions]="sortableOptions">
+         [sortablejs]="data.tasks"
+         [sortablejsOptions]="sortableOptions">
         <div *ngFor="let taskItem of data.tasks">
             <task-item [data]="taskItem"></task-item>
         </div>

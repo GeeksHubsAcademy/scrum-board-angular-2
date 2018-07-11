@@ -1,8 +1,9 @@
 .list {
     width: 250px;
     margin: 10px;
-    background: white;
-    padding: 20px;
+    background: #aaa;
+    border-radius: 10px;
+    padding: 10px;
 }
 .addTask {
     display: flex;
@@ -11,4 +12,8 @@
  .drop-over-active {
      border: dashed 1px black;
      background-color: lightgreen;
+ }
+ .taskItems {
+     min-height: 2em;
+     
  }
