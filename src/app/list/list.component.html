@@ -1,21 +1,12 @@
 <div class="list"
      id="{{data.listId}}">
-     <div class="handle">---</div>
     <div class="listHeader">
-        <h4>{{data.name}}
-            <button (click)="onRemoveList()">X</button>
-        </h4>
+        <div class="handle"><i class="material-icons">drag_handle</i></div>
+        <i class="material-icons button"
+           (click)="onRemoveList()">close</i>
 
     </div>
-    <div class="addTask">
-        <input type="text"
-               [(ngModel)]="newTaskName"
-               (keyup.enter)="onSaveNewTask()">
-        <button (click)="onSaveNewTask()">add task</button>
-    </div>
-    <!-- <pre>
-        {{data.tasks | json}}
-    </pre> -->
+    <h4>{{data.name}} </h4>
     <div class="taskItems"
          [sortablejs]="data.tasks"
          [sortablejsOptions]="sortableOptions">
@@ -24,15 +15,12 @@
         </div>
 
     </div>
+    <div class="addTask">
+        <input type="text"
+               [(ngModel)]="newTaskName"
+               placeholder="Add task"
+               (keyup.enter)="onSaveNewTask()">
+        <i class="material-icons button"
+ (click)="onSaveNewTask()">add</i>
+    </div>
 </div>
-<!-- 
-<div mwlDraggable
-     (dragEnd)="dragEnd($event)">Drag me!</div>
-<div mwlDroppable
-     (drop)="this.droppedData = $event.dropData">
-    <span [hidden]="droppedData">Drop here</span>
-    <span [hidden]="!droppedData">Item dropped here with data: "{{ droppedData }}"!</span>
-</div> -->
-<!-- <pre>
-  {{data | json}}
-</pre> -->

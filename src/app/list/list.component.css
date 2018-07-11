@@ -4,6 +4,23 @@
     background: #aaa;
     border-radius: 10px;
     padding: 10px;
+    padding-top:0;
+}
+.listHeader {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    top:7px;
+}
+.listHeader {
+    opacity: 0;
+}
+.list:hover .listHeader {
+    opacity: 1;
+}
+h4 {
+    margin-top:0;
 }
 
 .addTask {
@@ -21,10 +38,32 @@
 
 }
 
-.list .handle {
+
+
+.addTask {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     opacity: 0;
 }
-
-.list:hover .handle {
+.list:hover .addTask {
     opacity: 1;
+}
+.addTask input {
+    background: transparent;
+    border-radius: 2px;
+    border:0;
+    padding: 0.5em ;
+    flex:1;
+}
+.addTask i {
+    display: none;
+    flex:0;
+
+}
+.addTask:hover i ,
+.addTask:focus i,
+.addTask input:focus + i {
+    display: inline;
+
 }

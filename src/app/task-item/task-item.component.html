@@ -1,7 +1,8 @@
 <div class="taskItem "
      id="{{data.taskId}}"
      [style.borderColor]="data.color">
-    <button (click)="onRemoveTask()">X</button>
+    <i class="material-icons button"
+       (click)="onRemoveTask()">close</i>
     <input type="checkbox"
            [(ngModel)]="data.completed"
            (change)="onCompleted()">
