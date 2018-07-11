@@ -4,7 +4,8 @@
 </header>
 <section>
 <div class="lists"
-     [sortablejs]="lists">
+     [sortablejs]="lists" 
+     [sortablejsOptions]="sortableOptions">
      <list [data]="list" *ngFor="let list of lists" ></list>
   </div>
 </section>

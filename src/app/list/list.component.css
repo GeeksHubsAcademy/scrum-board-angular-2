@@ -5,15 +5,26 @@
     border-radius: 10px;
     padding: 10px;
 }
+
 .addTask {
     display: flex;
     justify-content: space-between;
 }
- .drop-over-active {
-     border: dashed 1px black;
-     background-color: lightgreen;
- }
- .taskItems {
-     min-height: 2em;
-     
- }
+
+.drop-over-active {
+    border: dashed 1px black;
+    background-color: lightgreen;
+}
+
+.taskItems {
+    min-height: 2em;
+
+}
+
+.list .handle {
+    opacity: 0;
+}
+
+.list:hover .handle {
+    opacity: 1;
+}
