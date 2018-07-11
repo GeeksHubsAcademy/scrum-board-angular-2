@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --open",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -21,9 +21,11 @@
     "@angular/platform-browser-dynamic": "^6.0.3",
     "@angular/router": "^6.0.3",
     "angular-draggable-droppable": "^3.0.1",
+    "angular-sortablejs": "^2.5.2",
     "core-js": "^2.5.4",
     "ngx-color-picker": "^6.4.0",
     "rxjs": "^6.0.0",
+    "sortablejs": "^1.7.0",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {

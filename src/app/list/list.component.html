@@ -1,8 +1,5 @@
 <div class="list"
-     id="{{data.listId}}"
-     mwlDroppable
-     dragOverClass="drop-over-active"
-     (drop)="onDrop($event)">
+     id="{{data.listId}}">
     <div class="listHeader">
         <h4>{{data.name}}
             <button (click)="onRemoveList()">X</button>
@@ -15,11 +12,12 @@
                (keyup.enter)="onSaveNewTask()">
         <button (click)="onSaveNewTask()">add task</button>
     </div>
-    <div class="taskItems">
-        <div mwlDraggable
-             dragActiveClass="drag-active"
-             [dropData]="taskItem"
-             *ngFor="let taskItem of data.tasks">
+    <pre>
+        {{data.tasks | json}}
+    </pre>
+    <div class="taskItems"
+        [sortablejs]="data.tasks">
+        <div *ngFor="let taskItem of data.tasks">
             <task-item [data]="taskItem"></task-item>
         </div>
 

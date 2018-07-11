@@ -26,11 +26,11 @@ export class ListComponent implements OnInit {
     onRemoveList() {
         this.dataService.removeList( this.data.listId );
     }
-  onDrop(event) {
-      let taskItem: Task = event.dropData
-      console.log(taskItem.text, this.data.name);
+//   onDrop(event) {
+//       let taskItem: Task = event.dropData
+//       console.log(taskItem.text, this.data.name);
       
-      this.dataService.moveTask(taskItem, this.data.listId);
-    }
+//       this.dataService.moveTask(taskItem, this.data.listId);
+//     }
 
 }
