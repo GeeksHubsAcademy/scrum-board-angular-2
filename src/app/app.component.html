@@ -3,7 +3,8 @@
   <button (click)="onSaveNewList()">add new list</button>
 </header>
 <section>
-  <div class="lists">
+<div class="lists"
+     [sortablejs]="lists">
      <list [data]="list" *ngFor="let list of lists" ></list>
   </div>
 </section>
