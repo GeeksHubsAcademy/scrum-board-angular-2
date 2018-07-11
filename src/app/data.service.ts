@@ -15,6 +15,8 @@ export class DataService {
     }
     save() {
         localStorage.setItem( 'lists', JSON.stringify( this.lists ) )
+        console.log('saved to localstorage');
+        
     }
     load() {
         this.lists = JSON.parse( localStorage.getItem( 'lists' ) ) || [];

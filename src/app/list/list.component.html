@@ -12,6 +12,9 @@
                (keyup.enter)="onSaveNewTask()">
         <button (click)="onSaveNewTask()">add task</button>
     </div>
+    <pre>
+        {{data.tasks | json}}
+    </pre>
     <div class="taskItems"
          [sortablejs]="data.tasks"
          [sortablejsOptions]="sortableOptions">
