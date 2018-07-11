@@ -8,7 +8,7 @@
 }
 .listHeader {
     display:flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     position: relative;
     top:7px;

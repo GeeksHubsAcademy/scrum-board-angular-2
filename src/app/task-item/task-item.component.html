@@ -1,17 +1,7 @@
 <div class="taskItem "
      id="{{data.taskId}}"
      [style.borderColor]="data.color">
-    <i class="material-icons button"
-       (click)="onRemoveTask()">close</i>
-    <input type="checkbox"
-           [(ngModel)]="data.completed"
-           (change)="onCompleted()">
-    <span [(colorPicker)]="data.color"
-          class="colorPicker"
-          [style.background]="data.color"
-          (colorPickerChange)="dataService.save()"
-          [cpPresetColors]="['#0033FF', '#ff6347', '#FF00CC', '#adff2f', '#fff', '#000']"
-          [cpPresetLabel]="''"></span>
+
     <div class="taskText {{data.completed ? 'completed' : ''}}"
          [hidden]="editing"
          (click)="startEdit(editBox)">
@@ -19,9 +9,32 @@
     </div>
     <input [hidden]="!editing"
            #editBox
+           class="editText"
            [(ngModel)]="data.text"
            (keyup.enter)="finishEdit()"
            (blur)="finishEdit()">
+    <div class="taskActions">
+        <i class="material-icons button"
+           (click)="onRemoveTask()">delete</i>
+        <i class="material-icons button"
+           (click)="startEdit(editBox)">edit</i>
+        <label for="completed-{{data.taskId}}"> <i class="material-icons button"
+           >{{data.completed ? 'check_box' : 'check_box_outline_blank'}}</i>
+        </label>
+
+        <input type="checkbox"
+               id="completed-{{data.taskId}}"
+               class="markCompleted"
+               [(ngModel)]="data.completed"
+               (change)="onCompleted()">
+        <i class="material-icons button colorPicker"
+           [(colorPicker)]="data.color"
+           (colorPickerChange)="dataService.save()"
+           [cpPresetColors]="['#0033FF', '#ff6347', '#FF00CC', '#adff2f', '#fff', '#000']"
+           [cpPresetLabel]="''">colorize</i>
+        <i class="material-icons handle">drag_handle</i>
+
+    </div>
 
 
 </div>

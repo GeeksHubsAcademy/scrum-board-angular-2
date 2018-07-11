@@ -1,36 +1,58 @@
 .taskItem {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     padding: 10px;
     border-radius: 5px;
     border-right-style:solid;
     border-right-color:white;
-    border-right-width: 4px;
+    border-right-width: 6px;
     padding-right: 0.3em;
     margin: 5px 0;
     background: white;
 }
+.taskActions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    opacity: 0;
+    transition: all 150ms ease-in;
 
-.taskItem button {
-    margin-right: 10px
+    
+}
+.taskActions * {
+    font-size: 22px;
+    transition: all 150ms ease-in;
+}
+.taskActions > *:hover {
+    transform: scale(1.4);
+    /* transition-duration: 300ms; */
+}
+.taskActions > *{
+    
+    margin-left: 0.5em;
+    color:#444;
+}
+label {
+    position: relative;
+    top:3px;
+}
+.markCompleted {
+    display: none;
+}
+.taskItem:hover .taskActions{
+    opacity: 1;
 }
 .completed  {
     opacity: 0.6;
     color: grey;
     text-decoration: line-through;
 }
-.colorPicker {
-    width:1em;
-    height:1em;
-    display: inline-block;
-    border-radius: 50%;
-    border: solid 1px black;
-    margin: 0 0.5em;
-    flex-shrink: 0;
-}
-input {
+
+.editText {
     flex-shrink: 1;
     border:none;
     background: transparent;
-    font-style: italic;
+    /* font-style: italic; */
+    padding: 0.2em;
 }

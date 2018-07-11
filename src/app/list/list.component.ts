@@ -15,11 +15,13 @@ export class ListComponent implements OnInit {
     
     private sortableOptions: SortablejsOptions = {
         group: 'sortable',
+        handle: '.handle',
         animation: 150,
-        onUpdate: (event: any) => {
-            console.log('onUpdate');
+        onEnd: (event: any) => {
+            console.log(event);
             
             this.dataService.save()
+            
         }
     };
     constructor( dataServ: DataService ) {
