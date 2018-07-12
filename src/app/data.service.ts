@@ -5,17 +5,25 @@ import {Task} from './task.interface';
 @Injectable( { providedIn: 'root' } )
 export class DataService {
     private lists: Array < List > ;
+    private subscribers: Array<Function> = [];
 
     constructor() {
         this.load();
     }
 
-    getLists() {
-        return this.lists
+    subscribeToLists(cb: Function) {
+            this.subscribers.push(cb);
+            cb(this.lists)
+    }
+    runSubscribers() {
+        for (const cb of this.subscribers) {
+            cb(this.lists)
+        }
     }
     save() {
         localStorage.setItem( 'lists', JSON.stringify( this.lists ) )
         console.log('saved to localstorage');
+        this.runSubscribers();
         
     }
     load() {

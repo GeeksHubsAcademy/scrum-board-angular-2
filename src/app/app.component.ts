@@ -21,7 +21,10 @@ export class AppComponent  {
         }
     };
     constructor( dataServ: DataService ) {
-        this.lists = dataServ.getLists();
+        dataServ.subscribeToLists((data) => {
+            this.lists = data;
+        });
+        
         this.dataService = dataServ;
     }
     onSaveNewList() {
