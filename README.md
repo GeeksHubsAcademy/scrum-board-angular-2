@@ -1,4 +1,37 @@
-# ProjectTaskAngular2
+#  Scrum Board
+
+## Uso
+
+Después de clonarlo en local ejecutar `npm install` para instalar las dependencias.
+
+Ejecutar `npm star` para levantar el servidor de desarrollo con hot reloading.
+
+
+## Features
+
+- [x] Diseño responsive
+- [x] Añadir listas nuevas
+- [x] Añadir tareas a las listas
+- [x] Guardar el estado en localStorage
+- [x] Borrar listas
+- [x] Marcar tarea como completada
+
+Para ser realizadas por los alumnos:
+
+- [x] Borrar tareas 
+- [x] Cambiar el color de las tareas individualmente (buscar un componente de terceros de color-picker)
+- [x] Editar texto de la tarea.
+- [x] Cambiar el tareas de lista arrastrándolas (drag and drop native o buscar algún componente de terceros)
+- [x] Cambiar las tareas de orden
+- [ ] Migrar la gestión del estado a redux
+
+## Objetivo final
+
+[video](https://www.useloom.com/share/c64de82caec54112a0fec089db5b8781)
+
+
+## Boilerplate
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
