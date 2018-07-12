@@ -17,7 +17,6 @@ export class AppComponent  {
         animation: 150,
         handle: '.handle' ,
         onUpdate: (event: any) => {
-            console.log('list onUpdate');
             this.dataService.save();
         }
     };

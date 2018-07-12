@@ -72,9 +72,11 @@ export class DataService {
         this.save();
     }
     changeListId(taskId: string, newListId: string) {
-        let indexListId = this.lists.findIndex(item => item.listId === newListId)
-        let indexTaskId = this.lists[indexListId].tasks.findIndex(item => item.taskId === taskId);
-        this.lists[indexListId].tasks[indexTaskId].listId = newListId;
+        const indexListId = this.lists.findIndex(item => item.listId === newListId)
+        const indexTaskId = this.lists[indexListId].tasks.findIndex(item => item.taskId === taskId);
+        const newTask = { ...this.lists[indexListId].tasks[indexTaskId]}
+        newTask.listId = newListId;
+        this.lists[indexListId].tasks[indexTaskId] = newTask;
         this.save();
     }
 }

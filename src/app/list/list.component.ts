@@ -14,14 +14,13 @@ export class ListComponent implements OnInit {
     private dataService: DataService;
     
     private sortableOptions: SortablejsOptions = {
-        group: 'sortable',
+        group: 'shared',
         handle: '.handle',
         animation: 150,
         onEnd: (event: any) => {
             let taskId = event.item.id;
             let toListId = event.to.id;            
             this.dataService.changeListId(taskId, toListId)
-            
         }
     }
     handleSortable(item){

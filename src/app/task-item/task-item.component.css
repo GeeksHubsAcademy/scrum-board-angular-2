@@ -23,7 +23,7 @@
 }
 .taskActions * {
     font-size: 22px;
-    transition: all 150ms ease-in;
+    transition: transform 150ms ease-in;
 }
 .taskActions > *:hover {
     transform: scale(1.4);

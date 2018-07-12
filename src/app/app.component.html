@@ -1,11 +1,16 @@
 <header class="addList">
-  <input type="text" [(ngModel)]="addListText" (keyup.enter)="onSaveNewList()" placeholder="Add new list">
-  
+    <input type="text"
+           [(ngModel)]="addListText"
+           (keyup.enter)="onSaveNewList()"
+           placeholder="Add new list">
+
 </header>
 <section>
-<div class="lists"
-     [sortablejs]="lists" 
-     [sortablejsOptions]="sortableOptions">
-     <list [data]="list" *ngFor="let list of lists" ></list>
-  </div>
+    <div class="lists"
+         [sortablejs]="lists"
+         [sortablejsOptions]="sortableOptions">
+        <list [data]="list"
+              *ngFor="let list of lists"></list>
+    </div>
+    <!-- <pre>{{lists | json}}</pre> -->
 </section>
