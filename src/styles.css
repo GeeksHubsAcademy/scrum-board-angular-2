@@ -44,3 +44,7 @@ body, html {
 .handle{
     cursor: move;
 }
+
+:focus {
+    outline: #666 auto 5px;
+}

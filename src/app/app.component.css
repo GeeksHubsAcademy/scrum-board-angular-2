@@ -10,15 +10,44 @@
 header {
     background: tomato;
     display: flex;
-    justify-content: flex-end;
-    padding: 30px;
+    justify-content: center;
+    padding: 20px;
 }
+input {
+     background: transparent;
+     border-radius: 2px;
+     border:0;
+     border-bottom: 2px solid #fff;
+     padding: 0.5em;
+     /* flex:0; */
+     color: white;
+     /* font-weight: 800; */
+}
+input::placeholder {
+    color: #ddd;
+}
+/* input::-webkit-input-placeholder {
+    color: white;
+} */
+
+/* input::-moz-placeholder {
+    color: white;
+} */
+
+/* input:-ms-input-placeholder {
+    color: white;
+} */
+
+/* input:-moz-placeholder {
+    color: white;
+} */
 
 .lists {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
+    align-items: flex-start;
     border: 1px solid grey;
-    padding: 30px;
+    padding: 20px;
 }

@@ -18,12 +18,17 @@ export class ListComponent implements OnInit {
         handle: '.handle',
         animation: 150,
         onEnd: (event: any) => {
-            console.log(event);
+            // console.log(event);
             
             this.dataService.save()
             
         }
-    };
+    }
+    handleSortable(item){
+        console.log(item);
+        return item
+        
+    }
     constructor( dataServ: DataService ) {
         this.dataService = dataServ;
     }
