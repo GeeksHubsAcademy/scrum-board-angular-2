@@ -44,11 +44,17 @@ h4 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    opacity: 0;
+    
 }
-.list:hover .addTask {
-    opacity: 1;
+
+.list .addTask input {
+ opacity: 0;
 }
+.list:hover .addTask input,
+input:focus {
+    opacity: 1 ;
+}
+
 .addTask input {
     background: transparent;
     border-radius: 2px;

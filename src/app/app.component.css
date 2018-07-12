@@ -46,6 +46,7 @@ input::placeholder {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    /* overflow: auto; */
     justify-content: flex-start;
     align-items: flex-start;
     border: 1px solid grey;

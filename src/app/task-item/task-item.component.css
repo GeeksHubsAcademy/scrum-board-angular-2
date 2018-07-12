@@ -16,9 +16,10 @@
     align-items: center;
     justify-content: flex-end;
     opacity: 0;
-    transition: all 150ms ease-in;
-
-    
+    transition: all 250ms ease-in;
+}
+.taskItem:hover .taskActions {
+    opacity: 1;
 }
 .taskActions * {
     font-size: 22px;
@@ -40,9 +41,7 @@ label {
 .markCompleted {
     display: none;
 }
-.taskItem:hover .taskActions{
-    opacity: 1;
-}
+
 .completed  {
     opacity: 0.6;
     color: grey;

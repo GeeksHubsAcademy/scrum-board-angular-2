@@ -18,9 +18,9 @@ export class ListComponent implements OnInit {
         handle: '.handle',
         animation: 150,
         onEnd: (event: any) => {
-            // console.log(event);
-            
-            this.dataService.save()
+            let taskId = event.item.id;
+            let toListId = event.to.id;            
+            this.dataService.changeListId(taskId, toListId)
             
         }
     }

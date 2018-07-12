@@ -71,4 +71,10 @@ export class DataService {
         this.lists[listIndex].tasks.push(data);
         this.save();
     }
+    changeListId(taskId: string, newListId: string) {
+        let indexListId = this.lists.findIndex(item => item.listId === newListId)
+        let indexTaskId = this.lists[indexListId].tasks.findIndex(item => item.taskId === taskId);
+        this.lists[indexListId].tasks[indexTaskId].listId = newListId;
+        this.save();
+    }
 }

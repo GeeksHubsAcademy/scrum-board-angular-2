@@ -1,17 +1,18 @@
 <div class="list"
-     id="{{data.listId}}">
+     id="listWraper-{{data.listId}}">
     <div class="listHeader">
         <div class="handle"><i class="material-icons">drag_handle</i></div>
         <i class="material-icons button"
            (click)="onRemoveList()">delete</i>
 
     </div>
-    <h4>{{data.name}} </h4>
+    <h4>{{data.name}}</h4>
     <div class="taskItems"
+         [id]="data.listId"
          [sortablejs]="data.tasks"
          [sortablejsOptions]="sortableOptions"
-         [sortablejsCloneFunction]="handleSortable">
-        <div *ngFor="let taskItem of data.tasks">
+         >
+        <div *ngFor="let taskItem of data.tasks" [id]="taskItem.taskId">
             <task-item [data]="taskItem"></task-item>
         </div>
 

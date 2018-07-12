@@ -35,8 +35,10 @@ export class TaskItemComponent implements OnChanges {
         // this.editInput.nativeElement.focus();
     }
     finishEdit() {
-        this.editing = false;
-        this.dataService.save();
+        setTimeout(()=>{
+            this.editing = false;
+            this.dataService.save();
+        },300)
     }
 
 }

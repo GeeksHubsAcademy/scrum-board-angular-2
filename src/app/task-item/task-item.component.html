@@ -1,7 +1,7 @@
 <div class="taskItem "
-     id="{{data.taskId}}"
+     id="taskWrapper-{{data.taskId}}"
      [style.borderColor]="data.color">
-
+    <!-- <pre>{{data | json}}</pre> -->
     <div class="taskText {{data.completed ? 'completed' : ''}}"
          [hidden]="editing"
          (click)="startEdit(editBox)">
@@ -18,8 +18,8 @@
            (click)="onRemoveTask()">delete</i>
         <i class="material-icons button"
            (click)="startEdit(editBox)">edit</i>
-        <label for="completed-{{data.taskId}}"> <i class="material-icons button"
-           >{{data.completed ? 'check_box' : 'check_box_outline_blank'}}</i>
+        <label for="completed-{{data.taskId}}"> 
+            <i class="material-icons button">{{data.completed ? 'check_box' : 'check_box_outline_blank'}}</i>
         </label>
 
         <input type="checkbox"
